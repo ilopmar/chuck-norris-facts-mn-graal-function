@@ -14,6 +14,17 @@ if [ -z "$ROLE_ARN" ]; then
     exit 1
 fi
 
-aws lambda create-function --function-name chuck-norris-facts \
---zip-file fileb://build/function.zip --handler function.handler --runtime provided \
---role ${ROLE_ARN}
+#aws lambda create-function --function-name chuck-norris-facts \
+#--zip-file fileb://build/function.zip --handler function.handler --runtime provided \
+#--role ${ROLE_ARN}
+
+S3_BUCKET="oci-bucket-ilopmar"
+STACK_NAME="ChuckNorrisFactsMnFunction"
+
+aws cloudformation package --template-file sam.yaml --output-template-file output-sam.yaml --s3-bucket $S3_BUCKET
+
+aws cloudformation deploy --template-file output-sam.yaml --stack-name $STACK_NAME --capabilities CAPABILITY_IAM
+
+aws cloudformation describe-stacks --stack-name $STACK_NAME
+
+#aws cloudformation delete-stack --stack-name $STACK_NAME
