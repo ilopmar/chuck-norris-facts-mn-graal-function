@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: chuck.norris.facts
+---
+testFramework: junit
+sourceLanguage: java
