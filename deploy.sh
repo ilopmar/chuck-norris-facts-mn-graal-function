@@ -1,7 +1,7 @@
-#!/bin/sh
-docker build . -t chuck-norris-facts
-mkdir -p build
-docker run --rm --entrypoint cat chuck-norris-facts  /home/application/function.zip > build/function.zip
+#!/bin/bash
+#docker build . -t chuck-norris-facts
+#mkdir -p build
+#docker run --rm --entrypoint cat chuck-norris-facts  /home/application/function.zip > build/function.zip
 
 # check for role
 ROLE_NAME=lambda-basic-role
