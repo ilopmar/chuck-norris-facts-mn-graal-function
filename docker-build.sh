@@ -1,4 +1,5 @@
 #!/bin/sh
+./gradlew assemble
 docker build . -t chuck-norris-facts
 echo
 echo
