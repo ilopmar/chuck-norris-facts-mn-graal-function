@@ -1,3 +1,6 @@
 #!/bin/sh
 set -euo pipefail
-./server -Djava.library.path=$(pwd)
+./server
+
+# I've tried with and without libsunec.so
+#./server -Djava.library.path=$(pwd)
