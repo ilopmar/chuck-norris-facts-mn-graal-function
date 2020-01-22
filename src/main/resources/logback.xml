@@ -13,7 +13,7 @@
     </root>
 
     <logger name="io.micronaut.http.client" level="TRACE" />
-    <logger name="io.micronaut" level="TRACE" />
-    <logger name="io.netty" level="TRACE" />
+<!--    <logger name="io.micronaut" level="TRACE" />-->
+<!--    <logger name="io.netty" level="TRACE" />-->
 
 </configuration>
